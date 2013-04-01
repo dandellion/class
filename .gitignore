@@ -1,0 +1,64 @@
+class Taste:# Основной класс изделий
+    food = 'Вкусняшка'
+    def main(self, main):
+        self.food = main
+
+class MadeOf(Taste):#Какого вида изделия
+    bake = 'Пирожок'
+    sweet = 'Конфета'
+    fruit = 'Фрукты'
+    def made (self, obake, osweet, ofruit):
+        self.bake = obake
+        self.sweet = osweet
+        self.fruit = ofruit
+  
+class KindSw(MadeOf):# Какого вида конфеты
+    sw1 = 'Шоколадная'
+    sw2 = 'Карамельная'
+    sw3 = 'Леденец'
+    def made (self, osw1, osw2, osw3):
+        self.sw1 = osw1
+        self.sw2 = osw2
+        self.sw3 = osw3
+        
+class KindBk(MadeOf):#Какого вида пирожок
+    bk1 = 'Яблочный'
+    bk2 = 'Вишневый'
+    bk3 = 'Клубничный'
+    bk4 = 'Без начинки'
+    def made (self, obk1, obk2, obk3, obk4):
+        self.bk1 = obk1
+        self.bk2 = obk2
+        self.bk3 = obk3
+        self.bk4 = obk4
+
+class KindFr(MadeOf):#Какого вида фрукты
+    fr1 = 'Яблочки в карамели'
+    fr2 = 'Моченая вишня'
+    fr3 = 'Сушеные бананы'
+    fr4 = 'Лимонные дольки' # Маглы любят лимонные дольки)
+    def made (self, ofr1, ofr2, ofr3, ofr4):
+        self.fr1 = ofr1
+        self.fr2 = ofr2
+        self.fr3 = ofr3
+        self.fr4 = ofr4
+
+class Name(KindSw):# Работаем с конфетами
+    def __init__(self, one, two):
+        self.name = one #название изделия
+        self.stuffing = two #начинка
+       
+x1 = Name("Мишка на севере", "С орехами")
+x2 = Name("Рулада", "С кокосовой стружкой")
+x3 = Name("Олимп", "С нугой и орехами")
+x4 = Name("Шипучка", "Со вкусом ананаса")
+y1 = KindFr()
+y2 = KindFr()
+#Выводим нужный нам список изделий
+print (x1.food, x1.sweet, x1.sw1, x1.name, x1.stuffing,'\n',
+       x2.food, x2.sweet, x2.sw1, x2.name, x2.stuffing,'\n',
+       x3.food, x3.sweet, x3.sw1, x3.name, x3.stuffing,'\n',
+       x4.food, x4.sweet, x4.sw3, x4.name, x4.stuffing,'\n',
+       y1.food, y1.fruit, y1.fr2,'\n',
+       y2.food, y2.fruit, y1.fr3,'\n')
+        
