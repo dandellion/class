@@ -54,11 +54,32 @@ x3 = Name("Олимп", "С нугой и орехами")
 x4 = Name("Шипучка", "Со вкусом ананаса")
 y1 = KindFr()
 y2 = KindFr()
-#Выводим нужный нам список изделий
-print (x1.food, x1.sweet, x1.sw1, x1.name, x1.stuffing,'\n',
-       x2.food, x2.sweet, x2.sw1, x2.name, x2.stuffing,'\n',
-       x3.food, x3.sweet, x3.sw1, x3.name, x3.stuffing,'\n',
-       x4.food, x4.sweet, x4.sw3, x4.name, x4.stuffing,'\n',
-       y1.food, y1.fruit, y1.fr2,'\n',
-       y2.food, y2.fruit, y1.fr3,'\n')
-        
+
+while True:
+    print ('Если хотите вывести пример ассортимента, введите 1')
+    print ('Если хотите ввести новое поступление шоколадных конфет, нажмите 2')
+    try:
+        s = int(input())
+        if s ==1:
+            print (x1.food, x1.sweet, x1.sw1, x1.name, x1.stuffing,'\n',
+               x2.food, x2.sweet, x2.sw1, x2.name, x2.stuffing,'\n',
+               x3.food, x3.sweet, x3.sw1, x3.name, x3.stuffing,'\n',
+               x4.food, x4.sweet, x4.sw3, x4.name, x4.stuffing,'\n',
+               y1.food, y1.fruit, y1.fr2,'\n',
+               y2.food, y2.fruit, y1.fr3,'\n')
+        else:
+            if s == 2:
+                print ('Ведите название изделия и начинку изделия')
+                z1=input()
+                z2=input()
+                x1 = Name(z1,z2)
+                print (x1.food, x1.sweet, x1.sw1, x1.name, x1.stuffing,'\n',
+                   x2.food, x2.sweet, x2.sw1, x2.name, x2.stuffing,'\n',
+                   x3.food, x3.sweet, x3.sw1, x3.name, x3.stuffing,'\n',
+                   x4.food, x4.sweet, x4.sw3, x4.name, x4.stuffing,'\n',
+                   y1.food, y1.fruit, y1.fr2,'\n',
+                   y2.food, y2.fruit, y1.fr3,'\n')
+            else:
+                print('Такого варианта нет. Попробуйте снова.')
+    except ValueError:
+        print('Такого варианта нет. Попробуйте снова.')
